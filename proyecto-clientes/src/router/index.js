@@ -36,7 +36,7 @@ const routes = [
     component: () => import('../views/AddClient.vue'),
     meta: {
       allowAnonymous: false,
-      allowNoAdmin: false
+      allowNoAdmin: true
     }
   },
   {

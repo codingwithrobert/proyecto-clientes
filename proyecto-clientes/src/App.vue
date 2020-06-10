@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link>
+      <router-link to="/add-client">Sign Up</router-link>
       <router-link to="/about">About</router-link>
       <button @click="logoutUser()" class="logout">Logout</button>
     </div>
@@ -23,7 +24,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://bit.ly/2AelUvO');
 #app {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -95,7 +96,13 @@ label {
   font-weight: 500;
 }
 input {
+  font-size: 0.9rem;
+  font-style: italic;
+  border-radius: 5px;
+  border: 1px solid #50038f;
+  outline: none;
   margin-bottom: 1rem;
+  height: 2rem;
 }
 hr {
   height: 0.1rem;

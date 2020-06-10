@@ -21,7 +21,7 @@ export function loginUser(user, password) {
         }
       });
       setAuthToken(res.data.token);
-      setIsAdmin(resolve.data.isAdmin);
+      setIsAdmin(res.data.isAdmin);
       resolve();
     } catch (error) {
       console.log('Error Login :', error);
@@ -30,7 +30,7 @@ export function loginUser(user, password) {
   });
 }
 
-// Exportamos
+// GUARDAMOS TOKEN LOCALSTORAGE
 
 export function setAuthToken(token) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -49,7 +49,7 @@ export function getAuthToken() {
   return localStorage.getItem(AUTH_TOKEN_KEY);
 }
 
-// CONSIGUIENDO FECHA DE EXPEIRACION
+// CONSIGUIENDO FECHA DE EXPIRACION
 
 export function getTokenExpirationDate(encodedToken) {
   let token = jwt(encodedToken);

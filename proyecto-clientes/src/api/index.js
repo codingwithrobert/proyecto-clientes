@@ -115,13 +115,13 @@ app.post('/auth', (request, resolve) => {
   const password = request.body.password;
   // Secuencia MYSQL
   // el campo user  == nickname io email
-  const sql = `SELECT * FROM users WHERE user=${user} AND password=${password}`;
+  const sql = `SELECT * FROM users WHERE user='${user}' AND password='${password}'`;
   // Conexion DB
   connection.query(sql, (error, results) => {
     let admin = null;
     if (error) throw error;
     if (results.length !== 0) {
-      const payloadd = {
+      const payload = {
         check: true
       };
       if (results[0].isadmin === 1) {
